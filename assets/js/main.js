@@ -7,8 +7,9 @@ var userNumber = [];
 while (randomNumber < 5) {
   var number = createRandom(1,100);
   randomNumber.push(number);
-  
-
+  if (!randomNumber.includes(number)) {
+      randomNumber.push(number);
+  }
 }
 
 // definisco una funzione che crea numeri randomici compresi fra l'uno e il cento

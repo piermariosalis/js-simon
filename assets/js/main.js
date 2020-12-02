@@ -1,9 +1,15 @@
-// Definisco variabili per i numeri random e i numeri inseriti dall'utente
+// 1 Definisco variabili per i numeri random e i numeri inseriti dall'utente
 var randomNumber = [];
+// var userNumbers = [];
+
+// 2 definisco una funzione che crea numeri randomici compresi fra l'uno e il cento
+
+function createRandom(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 
-
-// verifico che vengano restituiti 5 numeri
+// 3 verifico che vengano restituiti 5 numeri
 while (randomNumber < 5) {
   var number = createRandom(1,100);
   randomNumber.push(number);
@@ -12,7 +18,11 @@ while (randomNumber < 5) {
   }
 }
 
-// * creo funzione setTimeout per impostare un timer di 30s al termine del quale verrà chiesto 
+// 4 Con alert mostro 5 numeri generati in maniera randomica 
+alert(`Numeri generati: [${randomNumber}]`); // Backtick in macOS = "ALT + F9"
+
+
+// 5 creo funzione setTimeout per impostare un timer di 30s al termine del quale verrà chiesto 
 // all'utente tramite un Prompt di inserire,uno alla volta, i numeri generati dal computer
 
 setTimeout(function() {
@@ -23,11 +33,18 @@ setTimeout(function() {
         userNumbers.push(userNumber)
         }
     }
+
+// 6 Con ciclo for verifico quanti e quali numeri sono stati indovinati
+    var checkedNumber = [];
+    for (c=0; c < userNumber.length; c++) {
+        if (!userNumbers.includes(userNumber)) {
+            checkedNumber.push(userNumbers);
+        }
+    }
+// 7 Con messaggi di allerta verifico 
+    alert(`Sono stati indovinati : ${checked.length}` );
+    alert(`Ì numeri azzeccati: ${checkedNumber}`);
+
 },30000);
 
 
-// definisco una funzione che crea numeri randomici compresi fra l'uno e il cento
-
-function createRandom(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
